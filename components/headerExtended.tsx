@@ -1,12 +1,14 @@
-import { View, Text, StyleSheet, Pressable } from "react-native";
 import { Feather } from "@expo/vector-icons";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 
 type ButtonType = "menu" | "back" | "function";
 
 interface HeaderProps {
   type?: ButtonType;
   title?: string;
-  onPress?: () => void;
+  onPressMenu?: () => void;
+  onPressBack?: () => void;
+  onPressFunction?: () => void;
 }
 
 const Button = ({
@@ -43,8 +45,15 @@ const Button = ({
 export default function HeaderExtended({
   type,
   title,
-  onPress,
+  onPressMenu,
+  onPressBack,
+  onPressFunction,
 }: HeaderProps) {
+  let onPress;
+  if (type === "menu") onPress = onPressMenu;
+  else if (type === "back") onPress = onPressBack;
+  else if (type === "function") onPress = onPressFunction;
+
   return (
     <View style={styles.container}>
       {type && onPress ? <Button type={type} onPress={onPress} /> : null}
@@ -71,3 +80,12 @@ const styles = StyleSheet.create({
     color: "#3461FD",
   },
 });
+
+// Usage Example
+// <HeaderExtended
+//   type="menu"
+//   title="Home"
+//   onPressMenu={() => console.log("Menu pressed")}
+//   onPressBack={() => console.log("Back pressed")}
+//   onPressFunction={() => console.log("Function pressed")}
+// />
