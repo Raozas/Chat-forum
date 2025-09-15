@@ -21,7 +21,7 @@ export default function Index() {
         subtitle="It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum."
       />
       <Text>Edit app/index.tsx to edit this screen.</Text>
-      <Button text="Open Home Page" onPress={() => router.push("/dashboard")} />
+      <Button text="Open Home Page" onPress={() => router.push("/(auth)/signUp")} />
     </View>
   );
 }
