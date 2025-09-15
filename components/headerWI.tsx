@@ -70,14 +70,15 @@ const styles = StyleSheet.create({
     width: 345,
   },
   title: {
-    fontWeight: "bold",
     color: "#2A4ECA",
     fontSize: 32,
+    fontFamily: "Poppins-Bold",
   },
   subtitle: {
     color: "gray",
     fontSize: 14,
     textAlign: "center",
+    fontFamily: "Poppins-Regular",
   },
 });
 
