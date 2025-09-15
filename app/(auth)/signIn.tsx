@@ -1,18 +1,16 @@
-import Button from "@/components/button";
+import React from "react";
+import { useRouter } from "expo-router";
+import { View, Text, Pressable, Image } from "react-native";
 import HeaderWI from "@/components/headerWI";
 import Input from "@/components/input";
 import { Feather } from "@expo/vector-icons";
-import { useRouter } from "expo-router";
-import React, { useState } from "react";
-import { Image, Pressable, Text, TouchableOpacity, View } from "react-native";
-import Animated, { FadeIn, FadeOut } from "react-native-reanimated";
+import { useState } from "react";
+import Button from "@/components/button";
 
-export default function SignUp() {
+export default function SignIn() {
   const router = useRouter();
-  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [checked, setChecked] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   return (
     <View
@@ -25,8 +23,8 @@ export default function SignUp() {
       }}
     >
       <HeaderWI
-        iconType="clap"
-        title="Sign Up"
+        iconType="wave"
+        title="Sign In"
         subtitle="It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum."
       />
       <View style={{ flexDirection: "row", gap: 16 }}>
@@ -90,8 +88,12 @@ export default function SignUp() {
         <Text style={{ fontFamily: "Poppins-Regular" }}> Or </Text>
         <View style={{ height: 1, backgroundColor: "lightgray", width: 153 }} />
       </View>
-      <Input placeholder="Name" value={name} onChangeText={setName} required={true} />
-      <Input placeholder="Email" value={email} onChangeText={setEmail} required={true} />
+      <Input
+        placeholder="Email"
+        value={email}
+        onChangeText={setEmail}
+        required={true}
+      />
       <View style={{ width: 340, position: "relative", marginBottom: 8 }}>
         <Input
           placeholder="Password"
@@ -111,57 +113,25 @@ export default function SignUp() {
           />
         </Pressable>
       </View>
-      <View
-        style={{
-          flexDirection: "row",
-          width: 340,
-          justifyContent: "flex-start",
-          alignItems: "center",
-        }}
-      >
-        <TouchableOpacity
-          onPress={() => setChecked(!checked)}
-          style={{
-            width: 20,
-            height: 20,
-            marginRight: 8,
-            borderRadius: 4,
-            alignItems: "center",
-            justifyContent: "center",
-            backgroundColor: checked ? "#3461FD" : "#F5F9FE",
-          }}
-        >
-          {checked && (
-            <Animated.View entering={FadeIn} exiting={FadeOut}>
-              <Feather name="check" size={16} color="#fff" />
-            </Animated.View>
-          )}
-        </TouchableOpacity>
-        <Text
-          style={{
-            fontFamily: "Poppins-Regular",
-            color: "#61677D",
-            marginTop: 2,
-          }}
-        >
-          I agree to the Terms of Service and Privacy Policy
+      <View style={{ width: 340, alignItems: "flex-end", marginBottom: 24 }}>
+        <Text style={{ fontFamily: "Poppins-Regular", color: "#61677D" }}>
+          Forgot Password?
         </Text>
       </View>
-
       <Button
-        text="Sign Up"
+        text="Sign In"
         type="default"
         onPress={() => router.push("/dashboard")}
       />
       <View style={{ flexDirection: "row", gap: 8 }}>
         <Text style={{ fontFamily: "Poppins-Regular", color: "#61677D" }}>
-          Already have an account?
+          Don't have an account?
         </Text>
-        <TouchableOpacity onPress={() => router.push("/(auth)/signIn")}>
+        <Pressable onPress={() => router.push("/(auth)/signUp")}>
           <Text style={{ fontFamily: "Poppins-Bold", color: "#3461FD" }}>
-            Log In
+            Sign Up
           </Text>
-        </TouchableOpacity>
+        </Pressable>
       </View>
     </View>
   );

@@ -21,7 +21,7 @@ export default function Button({
         { backgroundColor: type === "refuse" ? "#ef233c" : "#3461FD" },
       ]}
     >
-      <Text style={{ color: "white", fontSize: 16, fontFamily: "Poppins" }}>
+      <Text style={{ color: "white", fontSize: 16, fontFamily: "Poppins-Regular" }}>
         {text}
       </Text>
     </Pressable>
