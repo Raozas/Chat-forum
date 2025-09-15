@@ -1,7 +1,7 @@
 // this is header with icon , title and text component
 
 import React from "react";
-import { View, Text, Image, StyleSheet } from "react-native";
+import { Image, StyleSheet, Text, View } from "react-native";
 
 type IconType = "clap" | "wave" | undefined;
 
@@ -20,7 +20,16 @@ const HeaderWI: React.FC<HeaderWIProps> = ({
 }) => {
   return (
     <View style={styles.container}>
-      <View style={{ alignItems: "center" , width: 90, height: 90, justifyContent: "center", borderRadius: 25, backgroundColor: "#D6DFFF" }}>
+      <View
+        style={{
+          alignItems: "center",
+          width: 90,
+          height: 90,
+          justifyContent: "center",
+          borderRadius: 25,
+          backgroundColor: "#D6DFFF",
+        }}
+      >
         {iconType && (
           <Image
             source={
@@ -46,16 +55,17 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "column",
     alignItems: "center",
-    padding: 10,
+    paddingVertical: 8,
+    paddingHorizontal: 10,
     justifyContent: "center",
-    gap: 30,
+    gap: 10,
+    margin: 0,
   },
   icon: {
     width: 70,
     height: 70,
   },
   textContainer: {
-    flex: 1,
     alignItems: "center",
     width: 345,
   },
@@ -63,7 +73,6 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: "#2A4ECA",
     fontSize: 32,
-
   },
   subtitle: {
     color: "gray",
