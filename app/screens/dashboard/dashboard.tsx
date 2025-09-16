@@ -1,16 +1,16 @@
-import HeaderExtended from "@/components/headerExtended";
+import HeaderExtended from "@/app/components/headerExtended";
+import { Feather } from "@expo/vector-icons";
 import React, { useRef } from "react";
 import { Image, Text, View } from "react-native";
-import bearAva from "../assets/images/bearAva.jpg";
-import { Feather } from "@expo/vector-icons";
+import bearAva from "../../../assets/images/bearAva.jpg";
 
+import Button from "@/app/components/button";
+import { useRouter } from "expo-router";
 import ReanimatedDrawerLayout, {
   DrawerLayoutMethods,
   DrawerPosition,
   DrawerType,
 } from "react-native-gesture-handler/ReanimatedDrawerLayout";
-import Button from "@/components/button";
-import { useRouter } from "expo-router";
 
 const Ava = () => {
   return (
@@ -100,7 +100,7 @@ const DrawerPage = () => {
           </View>
         ))}
       </View>
-      <Button text="Logout" onPress={() => router.push("/(auth)/signIn")} width={280} type="refuse" style={{ bottom: 50, position: "absolute" }} />
+      <Button text="Logout" onPress={() => router.push("/screens/(auth)/signIn")} width={280} type="refuse" style={{ bottom: 50, position: "absolute" }} />
     </View>
   );
 };

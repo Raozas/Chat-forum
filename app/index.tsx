@@ -1,7 +1,7 @@
-import HeaderWI from "@/components/headerWI";
+import HeaderWI from "@/app/components/headerWI";
 import { useRouter } from "expo-router";
 import { Text, View } from "react-native";
-import Button from "../components/button";
+import Button from "./components/button";
 
 export default function Index() {
   const router = useRouter();
@@ -12,7 +12,7 @@ export default function Index() {
         justifyContent: "center",
         alignItems: "center",
         paddingTop: 30,
-        gap: 50,
+        gap: 10,
       }}
     >
       <HeaderWI
@@ -21,7 +21,7 @@ export default function Index() {
         subtitle="It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum."
       />
       <Text>Edit app/index.tsx to edit this screen.</Text>
-      <Button text="Open Home Page" onPress={() => router.push("/(auth)/signUp")} />
+      <Button text="Open Home Page" onPress={() => router.push("/screens/(auth)/signUp")} />
     </View>
   );
 }

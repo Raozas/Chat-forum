@@ -1,6 +1,6 @@
-import Button from "@/components/button";
-import HeaderWI from "@/components/headerWI";
-import Input from "@/components/input";
+import Button from "@/app/components/button";
+import HeaderWI from "@/app/components/headerWI";
+import Input from "@/app/components/input";
 import { Feather } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
 import React, { useState } from "react";
@@ -42,7 +42,7 @@ export default function SignUp() {
             backgroundColor: "#F5F9FE",
           }}
         >
-          <Image source={require("../../assets/images/_Facebook.png")} />
+          <Image source={require("../../../assets/images/_Facebook.png")} />
           <Text
             style={{
               fontSize: 16,
@@ -66,7 +66,7 @@ export default function SignUp() {
             backgroundColor: "#F5F9FE",
           }}
         >
-          <Image source={require("../../assets/images/Group.png")} />
+          <Image source={require("../../../assets/images/Group.png")} />
           <Text
             style={{
               fontSize: 16,
@@ -151,13 +151,13 @@ export default function SignUp() {
       <Button
         text="Sign Up"
         type="default"
-        onPress={() => router.push("/dashboard")}
+        onPress={() => router.push("../dashboard/dashboard")}
       />
       <View style={{ flexDirection: "row", gap: 8 }}>
         <Text style={{ fontFamily: "Poppins-Regular", color: "#61677D" }}>
           Already have an account?
         </Text>
-        <TouchableOpacity onPress={() => router.push("/(auth)/signIn")}>
+        <TouchableOpacity onPress={() => router.push("/screens/(auth)/signIn")}>
           <Text style={{ fontFamily: "Poppins-Bold", color: "#3461FD" }}>
             Log In
           </Text>
