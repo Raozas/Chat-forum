@@ -1,16 +1,16 @@
-import Button from "../../components/button";
+import HeaderExtended from "@/app/components/headerExtended";
+import { Feather } from "@expo/vector-icons";
 import { router, useRouter } from "expo-router";
 import React, { useRef } from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
-import HeaderExtended from "@/app/components/headerExtended";
-import { Feather } from "@expo/vector-icons";
 import ReanimatedDrawerLayout, {
   DrawerLayoutMethods,
   DrawerPosition,
   DrawerType,
 } from "react-native-gesture-handler/ReanimatedDrawerLayout";
-import bearAva from "../../../assets/images/bearAva.jpg";
 import messages from "../../(tabs)/(chat)/messages.json";
+import bearAva from "../../../assets/images/bearAva.jpg";
+import Button from "../../components/button";
 
 const Ava = () => {
   return (
