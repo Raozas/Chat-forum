@@ -9,7 +9,7 @@ import ReanimatedDrawerLayout, {
   DrawerPosition,
   DrawerType,
 } from "react-native-gesture-handler/ReanimatedDrawerLayout";
-import bearAva from "../assets/images/bearAva.jpg";
+import bearAva from "../../../assets/images/bearAva.jpg";
 import messages from "../../(tabs)/(chat)/messages.json";
 
 const Ava = () => {
