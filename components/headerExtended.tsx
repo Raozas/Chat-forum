@@ -3,44 +3,34 @@ import { Pressable, StyleSheet, Text, View } from "react-native";
 
 type ButtonType = "menu" | "back" | "function";
 
+interface ButtonProps {
+  type: ButtonType;
+  onPress: () => void;
+}
+
+const iconMap = {
+  menu: "menu",
+  back: "arrow-left",
+  function: "more-vertical",
+} as const;
+
 interface HeaderProps {
   type?: ButtonType;
   title?: string;
   onPressMenu?: () => void;
   onPressBack?: () => void;
   onPressFunction?: () => void;
+  type2?: ButtonType;
+  onPress2?: () => void;
 }
 
 const Button = ({
   type,
-  onPress,
-}: {
-  type: ButtonType;
-  onPress: () => void;
-}) => {
-  switch (type) {
-    case "menu":
-      return (
-        <Pressable onPress={onPress}>
-          <Feather name="menu" size={24} color="#3461FD" />
-        </Pressable>
-      );
-    case "back":
-      return (
-        <Pressable onPress={onPress}>
-          <Feather name="arrow-left" size={24} color="#3461FD" />
-        </Pressable>
-      );
-    case "function":
-      return (
-        <Pressable onPress={onPress}>
-          <Feather name="more-vertical" size={24} color="#3461FD" />
-        </Pressable>
-      );
-    default:
-      return null;
-  }
-};
+  onPress,}: ButtonProps) =>  (
+  <Pressable onPress={onPress}>
+    <Feather name={iconMap[type]} size={24} color="#3461FD" />
+  </Pressable>
+);
 
 export default function HeaderExtended({
   type,
@@ -48,6 +38,8 @@ export default function HeaderExtended({
   onPressMenu,
   onPressBack,
   onPressFunction,
+  type2,
+  onPress2,
 }: HeaderProps) {
   let onPress;
   if (type === "menu") onPress = onPressMenu;
@@ -55,9 +47,10 @@ export default function HeaderExtended({
   else if (type === "function") onPress = onPressFunction;
 
   return (
-    <View style={styles.container}>
+    <View style={styles.container  }>
       {type && onPress ? <Button type={type} onPress={onPress} /> : null}
       <Text style={styles.title}>{title}</Text>
+      {type2 && onPress2 ? <Button type={type2} onPress={onPress2} /> : null}
     </View>
   );
 }
