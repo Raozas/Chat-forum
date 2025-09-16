@@ -1,4 +1,4 @@
-import HeaderExtended from "@/components/headerExtended";
+import HeaderExtended from "../../components/headerExtended";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import { StyleSheet, Text, View } from "react-native";
 import messages from "./messages.json";
