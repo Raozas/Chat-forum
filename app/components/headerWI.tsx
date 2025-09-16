@@ -34,9 +34,9 @@ const HeaderWI: React.FC<HeaderWIProps> = ({
           <Image
             source={
               iconType === "clap"
-                ? require("../assets/images/Claps.png")
+                ? require("../../assets/images/Claps.png")
                 : iconType === "wave"
-                ? require("../assets/images/Wave.png")
+                ? require("../../assets/images/Wave.png")
                 : undefined
             }
             style={[styles.icon, iconStyle]}

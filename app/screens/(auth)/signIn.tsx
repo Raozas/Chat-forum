@@ -1,11 +1,10 @@
-import React from "react";
-import { useRouter } from "expo-router";
-import { View, Text, Pressable, Image } from "react-native";
-import HeaderWI from "@/components/headerWI";
-import Input from "@/components/input";
+import Button from "@/app/components/button";
+import HeaderWI from "@/app/components/headerWI";
+import Input from "@/app/components/input";
 import { Feather } from "@expo/vector-icons";
-import { useState } from "react";
-import Button from "@/components/button";
+import { useRouter } from "expo-router";
+import React, { useState } from "react";
+import { Image, Pressable, Text, View } from "react-native";
 
 export default function SignIn() {
   const router = useRouter();
@@ -40,7 +39,7 @@ export default function SignIn() {
             backgroundColor: "#F5F9FE",
           }}
         >
-          <Image source={require("../../assets/images/_Facebook.png")} />
+          <Image source={require("../../../assets/images/_Facebook.png")} />
           <Text
             style={{
               fontSize: 16,
@@ -64,7 +63,7 @@ export default function SignIn() {
             backgroundColor: "#F5F9FE",
           }}
         >
-          <Image source={require("../../assets/images/Group.png")} />
+          <Image source={require("../../../assets/images/Group.png")} />
           <Text
             style={{
               fontSize: 16,
@@ -121,13 +120,13 @@ export default function SignIn() {
       <Button
         text="Sign In"
         type="default"
-        onPress={() => router.push("/dashboard")}
+        onPress={() => router.push("../dashboard/dashboard")}
       />
       <View style={{ flexDirection: "row", gap: 8 }}>
         <Text style={{ fontFamily: "Poppins-Regular", color: "#61677D" }}>
           Don't have an account?
         </Text>
-        <Pressable onPress={() => router.push("/(auth)/signUp")}>
+        <Pressable onPress={() => router.push("/screens/(auth)/signUp")}>
           <Text style={{ fontFamily: "Poppins-Bold", color: "#3461FD" }}>
             Sign Up
           </Text>
